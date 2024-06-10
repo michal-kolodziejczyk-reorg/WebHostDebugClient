@@ -1,8 +1,6 @@
-﻿
-namespace Reorg.ApiGateway.WebHost.DebugClientLib.MassCallers
+﻿namespace Reorg.ApiGateway.WebHost.DebugClientLib.MassCallers;
+
+internal interface IMassCaller
 {
-	internal interface IMassCaller
-	{
-		Task MakeCallsAsync(string url, int numberOfCalls, CancellationToken cancellationToken);
-	}
+	Task MakeCallsAsync(string url, int numberOfCalls, int secondsToWait, CancellationToken cancellationToken);
 }

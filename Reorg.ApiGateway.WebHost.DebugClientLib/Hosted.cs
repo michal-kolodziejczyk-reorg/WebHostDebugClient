@@ -19,8 +19,9 @@ internal sealed class Hosted(
 		logger.LogDebug("start");
 		while (true)
 		{
-			await massCaller.MakeCallsAsync(settings.Url, settings.NumberOfCalls, cancellationToken);
-			console.ReadKey();
+			await massCaller.MakeCallsAsync(settings.Url, settings.NumberOfCalls, settings.WaitInOneBatchForSecond, cancellationToken);
+			logger.LogCritical("Next round");
+			//console.ReadKey();
 		}
 	}
 
