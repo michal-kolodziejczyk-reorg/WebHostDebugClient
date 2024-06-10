@@ -51,7 +51,7 @@ internal sealed class MassCaller(IHttpClientFactory httpClientFactory, ILogger<M
 			RequestUri = new Uri(url)
 		};
 
-		message.Headers.Add("ClientId", "hardcoded same client id");
+		message.Headers.Add("Authorization", "hardcoded same client id");
 
 		return message;
 	}
